@@ -1,0 +1,18 @@
+[project]
+name = "doc-lm"
+version = "0.1.0"
+description = "An LLM-powered document chatbot agent."
+readme = "README.md"
+authors = [
+    { name = "segfaultering", email = "261435586+segfaultering@users.noreply.github.com" }
+]
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "mypy>=1.20.0",
+    "pre-commit>=4.5.1",
+    "pytest>=9.0.2",
+    "ruff>=0.15.9",
+]
