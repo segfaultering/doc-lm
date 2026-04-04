@@ -6,8 +6,15 @@ readme = "README.md"
 authors = [
     { name = "segfaultering", email = "261435586+segfaultering@users.noreply.github.com" }
 ]
-requires-python = ">=3.14"
-dependencies = []
+requires-python = "<3.14, >=3.13"
+dependencies = [
+    "langchain>=1.2.14",
+    "langchain-chroma>=1.1.0",
+    "langchain-community>=0.4.1",
+    "langchain-google-genai>=4.2.1",
+    "langchain-groq>=1.1.2",
+    "python-dotenv>=1.2.2",
+]
 
 [dependency-groups]
 dev = [
