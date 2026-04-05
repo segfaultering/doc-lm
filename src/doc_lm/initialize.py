@@ -1,4 +1,4 @@
-import config as cfg
+import doc_lm.config as cfg
 
 import sqlite3
 

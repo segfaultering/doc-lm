@@ -1,15 +1,26 @@
-import config as cfg
+import doc_lm.config as cfg
 
 from uuid import uuid4
 from pathlib import Path
 from datetime import datetime as dt 
 import time
 from typing import Any
+from string import ascii_letters
 
 from langchain_community.document_loaders import PyPDFLoader
 
 class _Doc:
     def __init__(self, document: Path) -> None:
+        if not document.exists():
+            raise FileNotFoundError(f"Document named: \"{document}\" was not found!")
+
+        def valid_file_name(file_stem: str) -> bool:
+            return ("-_" + ascii_letters) in file_stem
+
+
+        if valid_file_name(document.stem): 
+            raise ValueError(f"The document name: \"{document.stem}\" needs at least one alphabet character to be valid!") 
+
         self.id = str(uuid4())
         self.name = document.stem
         self.last_mod_date = (dt.fromtimestamp(document.stat().st_mtime)).isoformat(sep=" ", timespec="seconds")

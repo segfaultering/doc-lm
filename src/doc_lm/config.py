@@ -42,7 +42,7 @@ class Paths(Enum):
 
 class ApiKeys(StrEnum):
     GROQ = os.environ["GROQ_API_KEY"]
-    GOOGLE_GENAI = os.environ["GOOGLE_GENAI_KEY"]
+    GOOGLE_GENAI = os.environ["GOOGLE_API_KEY"]
     
 class SqlQueries(StrEnum):
     ADD_DOC = """
